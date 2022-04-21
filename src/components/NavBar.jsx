@@ -1,4 +1,5 @@
 import React from "react";
+import CarWidget from './CarWidget';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from 'react-bootstrap';
 
 
@@ -21,7 +22,7 @@ const CustomNavBar = () => {
                                 Creá tu rutina ideal
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#action6"> Carrito</Nav.Link>
+                        <Nav.Link href="#action6"> <CarWidget/> </Nav.Link>
                     </Nav>
                     <Form className="d-flex">
                         <FormControl type="search" placeholder="Qué estas buscando?" className="me-2" aria-label="Search" />
