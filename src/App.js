@@ -1,16 +1,18 @@
 
 import './App.css';
-import CustomNavBar from './components/NavBar'
-
+import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
+import ItemCount from './components/ItemCount';
 
 function App() {
   return (
     <div className="App">
-        <CustomNavBar/>
-        <ItemListContainer  regards="Bienvenidos a Cosmética Cba"/>
+        <NavBar/>
+        <ItemListContainer  regards={"Bienvenidos a Cosmética Cba"}/>
+        <ItemCount initial={1} stock={20}/>
         <Footer/>
+
     </div>
   );
 }

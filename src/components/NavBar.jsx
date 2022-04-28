@@ -3,7 +3,7 @@ import CarWidget from './CarWidget';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from 'react-bootstrap';
 
 
-const CustomNavBar = () => {
+const NavBar = () => {
     return (
         <Navbar>
             <Container fluid>
@@ -34,4 +34,4 @@ const CustomNavBar = () => {
     )
 };
 
-export default CustomNavBar;
+export default NavBar;

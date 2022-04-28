@@ -2,9 +2,10 @@ import React from "react";
 import {} from 'react-bootstrap';
 
 
-const ItemListContainer = (props) => {
+const ItemListContainer = ({regards}) => {
     return (
-            <div className="border border-danger p-5"> {props.regards}</div>
+            <div className="border border-danger p-5"> {regards}
+            </div>
         )
 };
 
