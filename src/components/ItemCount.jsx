@@ -26,21 +26,18 @@ export const ItemCount = ({stock, initial}) => {
     return (
     <div>
         <div style={{display:"flex", flexDirection:"column"}}>
-            <div>Stock disponible:{stockAux}</div>
             <div>Productos en carrito: {stock-stockAux}</div>
             <div style={{display:"flex", justifyContent:"space-around"}}>
-            <button onClick={restar}>restar 1</button>
-            <h1>Agregar a carrito:{contador}</h1>
-            <button onClick={sumar}>sumar 1</button>  
+            <button onClick={restar}>-</button>
+            <h1>Cantidad:{contador}</h1>
+            <button onClick={sumar}>+</button>  
             </div>
+            <div>Stock disponible:{stockAux}</div>
             <div>
             <button onClick={onAdd}>Agragar al carrito</button> 
             </div>
         </div>
 
-        {/* <div>
-            <LifeCicle/>
-        </div> */}
     </div>
     )
 }
