@@ -18,7 +18,7 @@ useEffect(() => {
 
 
     return <ul>
-    <div className="border border-danger p-5">Productos
+    <div>Productos
         <div>
         {productos.map(u => <li><Item detalle={u}/></li>)}
         
