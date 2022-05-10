@@ -13,7 +13,7 @@ function Item({detalle}) {
                     <h1>{detalle.nombre} </h1>
                     <h4>
                         {detalle.precio}
-                        <ItemCount initial={1} stock={20}/>
+                        <ItemCount initial={1} stock={detalle.stock}/>
                     </h4>
                     </div>
                 </div>
