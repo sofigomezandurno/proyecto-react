@@ -57,6 +57,35 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    list-style:none
+
+}
+
+.productos-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.home{
+    background-color: #f7c0bc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+
+}
+
+.imgHome{
+    width: 50%;
+    border-radius: 1%;
+}
+
+.contenedorHome {
+    display: flex;
+    flex-direction: row;
+
 
 }
 

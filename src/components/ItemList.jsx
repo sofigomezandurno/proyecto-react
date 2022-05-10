@@ -15,7 +15,7 @@ useEffect(() => {
 
 
     return <ul>
-    <div>Productos
+    <div>
         <div className="productos-rows">
         {productos.map(u => <li><Item detalle={u}/></li>)}
         

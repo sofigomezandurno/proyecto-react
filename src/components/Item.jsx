@@ -4,14 +4,15 @@ import "./style.css";
 import {Link} from "react-router-dom";
 
 function Item({detalle}) { 
+    console.log(detalle)
     return (
     <div className='section'>
         {Array.from({ length: 1}).map((_, idx) => (
             <div>
-                <div className='productos-rows'>
-                <img className='section-img' src="holder.js/100px160" />
+                <div className='productos-item'>
+                    <h2>{detalle.nombre} </h2>
+                <img className="section-img"src={detalle.img}/>
                     <div>
-                    <h1>{detalle.nombre} </h1>
                     <h4>
                         {detalle.precio}
                         <ItemCount initial={1} stock={detalle.stock}/>

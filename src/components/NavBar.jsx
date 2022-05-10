@@ -16,7 +16,9 @@ const NavBar = () => {
                         </Link>
                         <Nav.Link href="#action2">Nosotros</Nav.Link>
                         <NavDropdown title="Productos" id="navbarScrollingDropdown">
+                        <Link to={"/cosmeticos"}>
                             <NavDropdown.Item href="#action3">Cosméticos</NavDropdown.Item>
+                        </Link>
                             <NavDropdown.Item href="#action4">Accesorios</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action5">

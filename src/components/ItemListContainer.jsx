@@ -6,8 +6,8 @@ import ItemList from './ItemList';
 
 const ItemListContainer = ({regards}) => {
     return (
-            <div className="border border-danger p-5"> {regards}
-                <div className="border border-danger p-5">
+            <div> {regards}
+                <div>
                 <ItemList/>
                 </div>
             </div>

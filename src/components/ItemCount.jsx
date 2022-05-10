@@ -25,7 +25,7 @@ export const ItemCount = ({stock, initial}) => {
 
     return (
     <div>
-        <div style={{display:"flex", flexDirection:"column"}}>
+        <div>
             <div>Carrito: {stock-stockAux}</div>
             <div  className='contador'>
             <div style={{display:"flex", justifyContent:"space-around", padding:"5px"}}>
