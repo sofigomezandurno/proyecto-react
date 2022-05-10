@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import LifeCicle from './LifeCicle';
+import './style.css';
 
 export const ItemCount = ({stock, initial}) => {
 
@@ -26,13 +26,15 @@ export const ItemCount = ({stock, initial}) => {
     return (
     <div>
         <div style={{display:"flex", flexDirection:"column"}}>
-            <div>Productos en carrito: {stock-stockAux}</div>
-            <div style={{display:"flex", justifyContent:"space-around"}}>
+            <div>Carrito: {stock-stockAux}</div>
+            <div  className='contador'>
+            <div style={{display:"flex", justifyContent:"space-around", padding:"5px"}}>
             <button onClick={restar}>-</button>
-            <h1>Cantidad:{contador}</h1>
-            <button onClick={sumar}>+</button>  
+            <h4>{contador}</h4>
+            <button onClick={sumar}>+</button> 
+            </div> 
             </div>
-            <div>Stock disponible:{stockAux}</div>
+            <div>Stock:{stockAux}</div>
             <div>
             <button onClick={onAdd}>Agragar al carrito</button> 
             </div>

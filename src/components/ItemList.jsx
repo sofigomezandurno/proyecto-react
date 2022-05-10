@@ -2,24 +2,21 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Item from './Item';
+import data from "../data/data"
+import "./style.css";
 
 function ItemList() {
 
 const [productos, setProductos] = useState([])
 
 useEffect(() => {
-    setTimeout(setProductos([
-        {nombre:"Espuma de limpieza", precio: "$1000,00"},
-        {nombre:"Serum Vit C", precio: "$1800,00"},
-        {nombre:"Crema facial día", precio: "$2000,00"},
-    
-    ]), 200)
+    setTimeout(setProductos(data), 200)
 }, [])
 
 
     return <ul>
     <div>Productos
-        <div>
+        <div className="productos-rows">
         {productos.map(u => <li><Item detalle={u}/></li>)}
         
         </div>

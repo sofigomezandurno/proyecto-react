@@ -1,7 +1,7 @@
 import React from "react";
 import CarWidget from './CarWidget';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from 'react-bootstrap';
-
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -11,8 +11,9 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-
-                        <Nav.Link href="#action1">Inicio</Nav.Link>
+                        <Link to={"/"}>
+                            <Nav.Link href="#action1">Inicio</Nav.Link>
+                        </Link>
                         <Nav.Link href="#action2">Nosotros</Nav.Link>
                         <NavDropdown title="Productos" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="#action3">Cosméticos</NavDropdown.Item>

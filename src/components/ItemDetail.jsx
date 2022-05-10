@@ -1,22 +1,21 @@
 import React from 'react'
-import {Card} from 'react-bootstrap';
+import "./style.css";
 
 export const ItemDetail = ({producto}) => {
     console.log(producto)
     return (
     <div>
-        <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
-                    <Card.Body>
-                    <Card.Title>{producto.nombre} </Card.Title>
-                    <Card.Text>
+        <div className="section">
+                    <div>
+                    <h1>{producto.nombre} </h1>
+                    <h4>
                         {producto.precio}
-                    </Card.Text>
-                    <Card.Text>
+                    </h4>
+                    <h4>
                         {producto.detalle}
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
+                    </h4>
+                    </div>
+                </div>
     </div>
     )
 }
