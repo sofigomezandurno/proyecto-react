@@ -7,7 +7,6 @@ function Item({detalle}) {
     console.log(detalle)
     return (
     <div className='section'>
-        {Array.from({ length: 1}).map((_, idx) => (
             <div>
                 <div className='productos-item'>
                     <h2>{detalle.nombre} </h2>
@@ -15,7 +14,7 @@ function Item({detalle}) {
                     <div>
                     <h4>
                         {detalle.precio}
-                        <ItemCount initial={1} stock={detalle.stock}/>
+                        <ItemCount initial={1} stock={detalle.stock} producto={detalle}/>
                     </h4>
                     <Link to={`/item/${detalle.id}`}>
                     <button>Ver más</button>
@@ -23,7 +22,6 @@ function Item({detalle}) {
                     </div>
                 </div>
             </div>
-        ))}
 
         
     </div>

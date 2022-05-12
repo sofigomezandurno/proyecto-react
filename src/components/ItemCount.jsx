@@ -1,13 +1,18 @@
 import React, {useState} from 'react'
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-export const ItemCount = ({stock, initial}) => {
+export const ItemCount = ({stock, initial, producto}) => {
 
     const [contador, setContador]= useState(initial);
     const [stockAux, setStockAux]= useState(stock);
-    /* const [ciclo, setCicle]= useState(true); */
 
-    const onAdd = () => {
+    useEffect(() => {
+        setStockAux(stock)
+    }, [stock])
+
+    const handleOnAdd = () => {
         setStockAux(stockAux-contador);
         setContador(0);
     }
@@ -36,7 +41,16 @@ export const ItemCount = ({stock, initial}) => {
             </div>
             <div>Stock:{stockAux}</div>
             <div>
-            <button onClick={onAdd}>Agragar al carrito</button> 
+
+            <button onClick={handleOnAdd}>Agragar al carrito</button> 
+            {
+                producto &&
+
+            <Link to={`/Cart/${producto.id}/${stock-stockAux}`}>
+                <button>Ir al carrito </button>
+            </Link>
+
+            }
             </div>
         </div>
 

@@ -16,6 +16,14 @@ h3 {
 
 }
 
+h4 {
+    color: black;
+    text-align: center;
+    margin: 5px;
+
+}
+
+
 .section {
     display: flex;
     justify-content: space-evenly;
@@ -27,6 +35,34 @@ h3 {
     border-radius: 10px;
 }
 
+.sectionDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px 40px 40px;
+    background-color: #f7c0bc;
+    width: 500px;
+    margin: 25px;
+    border-radius: 10px;
+}
+
+.productoDetalle{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 5px;
+    margin-left: 20px;
+
+}
+
+.producto{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 5px;
+
+
+}
 .contador{
     border: 2px solid;
     border-radius: 5%;
@@ -37,6 +73,33 @@ h3 {
     width: 100%;
     display: flex;
     justify-content: center;
+    border-radius: 10px;
+}
+
+.productoCarrito {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    margin: 15px;
+}
+
+.cantidadCarrito {
+    font-size: 2rem;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin: 15px;
+    padding: 20px;
+}
+
+.sectionCarrito {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 40px 40px 40px 40px;
+    background-color: #f7c0bc;
+    width: 450px;
+    margin: 25px;
     border-radius: 10px;
 }
 
