@@ -15,6 +15,7 @@ function Item({detalle}) {
                     <h4>
                         {detalle.precio}
                         <ItemCount initial={1} stock={detalle.stock} producto={detalle}/>
+
                     </h4>
                     <Link to={`/item/${detalle.id}`}>
                     <button>Ver más</button>

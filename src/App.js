@@ -7,11 +7,13 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./components/Home"
 import { Cart } from './components/Cart';
+import GlobalStateContext from './context/GlobalStateContext';
 
 
 function App() {
   return (
     <div className="App">
+      <GlobalStateContext>
     <BrowserRouter>
         <NavBar/>
     <Routes>
@@ -24,6 +26,7 @@ function App() {
     </Routes>
     </BrowserRouter>
         <Footer/>
+    </GlobalStateContext>
     </div>
   );
 }
