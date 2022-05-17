@@ -1,28 +1,28 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
-import data from "../data/data";
-import { useParams } from 'react-router-dom';
 import "./style.css";
+import { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalStateContext';
 
 
 export const Cart = () => {
-    const [producto, setProducto] = useState([])
-    const {id, quantityOnAdd}=useParams()
+    const {carrito} = useContext(GlobalContext);
 
-useEffect(() => {
-    setTimeout(setProducto(data.find((data)=> data.id==id)), 200)
-
-}, [])
+    console.log(carrito)
 
     return (
     <div className='sectionCarrito'> 
-        <div className='productoCarrito'>
-        {producto.nombre}
-        </div> Cantidad 
-        <div className='cantidadCarrito'>
-        {quantityOnAdd}
-        </div>
+    <ul>
+        {carrito.map((carrito, index)=>(
+        <li index={index}>
+            <div className='productoCarrito'>
+            {carrito.nombre}
+            </div>  
+            <div className='cantidadCarrito'>
+                Cantidad {carrito.stock}
+            </div>
+        </li> 
+    ))}
+    </ul>
     </div>
     )
 }

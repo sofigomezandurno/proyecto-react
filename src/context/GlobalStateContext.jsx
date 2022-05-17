@@ -7,8 +7,14 @@ const GlobalStateContext=({children})=>{
 
 const[carrito, setCarrito]=useState([])
 
+const addToCart =(producto) => {
+    const carritoAux = carrito.find((cart)=>(cart.id ===producto.id))
+
+    setCarrito([...carrito,producto])
+}
+
     return (
-    <GlobalContext.Provider value={{carrito, setCarrito}}>
+    <GlobalContext.Provider value={{carrito, addToCart}}>
         {children}
     </GlobalContext.Provider>
     )

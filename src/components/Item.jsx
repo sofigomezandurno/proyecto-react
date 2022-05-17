@@ -1,9 +1,11 @@
-import React from 'react'
+import React  from 'react'
 import ItemCount from './ItemCount';
 import "./style.css";
 import {Link} from "react-router-dom";
 
+
 function Item({detalle}) { 
+
     console.log(detalle)
     return (
     <div className='section'>

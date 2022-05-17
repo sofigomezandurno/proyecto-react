@@ -1,11 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
+import { GlobalContext } from '../context/GlobalStateContext';
 
 export const ItemCount = ({stock, initial, producto}) => {
 
+    const {id, nombre} =producto;
+    const { addToCart} = useContext(GlobalContext)
+
     const [contador, setContador]= useState(initial);
+    const [state, setState]= useState({id, nombre, stock});
+
     const [stockAux, setStockAux]= useState(stock);
 
     useEffect(() => {
@@ -15,6 +21,7 @@ export const ItemCount = ({stock, initial, producto}) => {
     const handleOnAdd = () => {
         setStockAux(stockAux-contador);
         setContador(0);
+        addToCart(state)
     }
 
 
@@ -46,7 +53,7 @@ export const ItemCount = ({stock, initial, producto}) => {
             {
                 producto &&
 
-            <Link to={`/Cart/${producto.id}/${stock-stockAux}`}>
+            <Link to={`/Cart`}>
                 <button>Ir al carrito </button>
             </Link>
 
