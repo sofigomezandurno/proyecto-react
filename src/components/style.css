@@ -81,6 +81,11 @@ h4 {
     color: black;
     text-align: center;
     margin: 15px;
+    list-style: none;
+}
+
+ul{
+    list-style: none;
 }
 
 .cantidadCarrito {
@@ -101,6 +106,8 @@ h4 {
     width: 450px;
     margin: 25px;
     border-radius: 10px;
+    flex-direction: column;
+
 }
 
 .productos {
