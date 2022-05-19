@@ -14,15 +14,30 @@ const GlobalStateContext = ({ children }) => {
         );
 
         if (itemIndex < 0) {
-            carritoEditado.push({ ...producto });
+
+            const nuevoProducto = {...producto};
+            nuevoProducto.precio = nuevoProducto.contador * nuevoProducto.precio;
+            carritoEditado.push(nuevoProducto);
         } else {
             const itemEditado = {
                 ...carritoEditado[itemIndex]
             };
             itemEditado.contador = itemEditado.contador + producto.contador;
+            itemEditado.precio = itemEditado.contador * producto.precio;
+
             carritoEditado[itemIndex] = itemEditado;
         }
         setCarrito(carritoEditado)
+    }
+
+    const precioTotal = () => {
+        let precioTotal = 0;
+        if (carrito.length > 0){
+            for(let i = 0; i < carrito.length; i++ ){
+                precioTotal=precioTotal+carrito[i].precio; 
+            }
+        }
+        return precioTotal; 
     }
 
     const removeFromCart = (productId) => {
@@ -47,7 +62,7 @@ const GlobalStateContext = ({ children }) => {
     };
 
     return (
-        <GlobalContext.Provider value={{ carrito, addToCart, removeFromCart, isInCart, clear }}>
+        <GlobalContext.Provider value={{ carrito, addToCart, removeFromCart, isInCart, clear, precioTotal }}>
             {children}
         </GlobalContext.Provider>
     )

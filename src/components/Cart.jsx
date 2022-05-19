@@ -3,10 +3,19 @@ import "./style.css";
 import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalStateContext';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
 export const Cart = () => {
-    const { carrito, removeFromCart, clear } = useContext(GlobalContext);
+    const { carrito, removeFromCart, clear, precioTotal } = useContext(GlobalContext);
+
+    const [precioTotalCarrito, setPrecioTotal] = useState(precioTotal())
+    useEffect(() => {
+        setPrecioTotal(precioTotal());
+    }, [carrito])
+
+
 
     return (
         <div className='sectionCarrito'>
@@ -21,6 +30,7 @@ export const Cart = () => {
                         <div className='productoCarrito'>
                             {carrito.nombre}
                         </div>
+                            <div> $ {carrito.precio} </div>
                         <div className='cantidadCarrito'>
                             Cantidad {carrito.contador}
                         </div>
@@ -30,6 +40,11 @@ export const Cart = () => {
                     <div>El carrito se encuentra vacio..</div>
                 }
             </ul>
+            {carrito.length > 0 && 
+            <div>
+            <div>Total {precioTotalCarrito}</div>
+            <button>Finalizar compra</button>
+            </div>}
         </div>
     )
 }

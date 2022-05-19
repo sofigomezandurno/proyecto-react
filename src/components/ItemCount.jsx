@@ -6,7 +6,7 @@ import { GlobalContext } from '../context/GlobalStateContext';
 
 export const ItemCount = ({ stock, initial, producto }) => {
 
-    const { id, nombre } = producto;
+    const { id, nombre, precio } = producto;
     const { addToCart, isInCart } = useContext(GlobalContext)
 
     const [contador, setContador] = useState(initial);
@@ -28,7 +28,7 @@ export const ItemCount = ({ stock, initial, producto }) => {
     }
 
     useEffect(() => {
-        setState({ id, nombre, contador })
+        setState({ id, nombre, contador, precio })
     }, [contador])
 
     useEffect(() => {
