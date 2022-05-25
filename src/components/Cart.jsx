@@ -15,8 +15,6 @@ export const Cart = () => {
         setPrecioTotal(precioTotal());
     }, [carrito])
 
-
-
     return (
         <div className='sectionCarrito'>
             <Link to={`/cosmeticos`}>

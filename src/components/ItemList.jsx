@@ -2,15 +2,23 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Item from './Item';
-import data from "../data/data"
 import "./style.css";
+import db from '../service/firebase'
+import { collection, getDocs } from 'firebase/firestore';
 
 function ItemList() {
 
 const [productos, setProductos] = useState([])
 
-useEffect(() => {
-    setTimeout(setProductos(data), 200)
+useEffect(async () => {
+    const col = collection(db, 'productos')
+    try {
+        const data =  await getDocs(col);
+        const result = data.docs.map(doc => doc ={id:doc.id, ...doc.data()})
+        setProductos(result)
+    } catch (error) {
+        console.log(error)
+    }
 }, [])
 
 
