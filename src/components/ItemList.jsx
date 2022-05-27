@@ -10,7 +10,7 @@ function ItemList() {
 
 const [productos, setProductos] = useState([])
 
-useEffect(async () => {
+const buscarProductos = async () =>{
     const col = collection(db, 'productos')
     try {
         const data =  await getDocs(col);
@@ -19,6 +19,10 @@ useEffect(async () => {
     } catch (error) {
         console.log(error)
     }
+}
+
+useEffect(() => {
+    buscarProductos();
 }, [])
 
 

@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./components/Home"
 import { Cart } from './components/Cart';
 import GlobalStateContext from './context/GlobalStateContext';
+import { Formulario } from './components/Formulario';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/Item' element={<ItemDetailContainer/>}/>
         <Route exact path='/Item/:id' element={<ItemDetailContainer/>}/>
         <Route exact path='/Cart' element={<Cart />}/>
+        <Route exact path='/Formulario' element={<Formulario />}/>
 
     </Routes>
     </BrowserRouter>

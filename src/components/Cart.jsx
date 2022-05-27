@@ -41,7 +41,9 @@ export const Cart = () => {
             {carrito.length > 0 && 
             <div>
             <div>Total {precioTotalCarrito}</div>
-            <button>Finalizar compra</button>
+            <Link to={`/Formulario`}>
+                <button>Finalizar compra</button>
+            </Link>    
             </div>}
         </div>
     )
