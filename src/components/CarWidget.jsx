@@ -1,5 +1,4 @@
 import React from "react";
-import {} from 'react-bootstrap';
 import {BsCart4} from "react-icons/bs";
 
 

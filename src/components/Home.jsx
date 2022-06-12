@@ -1,10 +1,6 @@
 import React from "react";
-import {} from 'react-bootstrap';
 import img from "../img/imgHome.jpg";
 import "./style.css";
-
-
-
 
 const Home = ({regards}) => {
     return (

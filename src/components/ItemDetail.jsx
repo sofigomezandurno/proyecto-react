@@ -3,15 +3,13 @@ import "./style.css";
 import ItemCount from './ItemCount';
 
 export const ItemDetail = ({producto}) => {
-    console.log('producto')
-    console.log(producto)
     return (
         <div className='sectionDetail'>
         <div>
             <div className='producto'>
             <div className='productos-item'>
                 <h2>{producto.nombre} </h2>
-            <img className="section-img"src={producto.img}/>
+            <img className="section-img"src={producto.imagen}/>
             </div>
 
                 <div className='productoDetalle'>

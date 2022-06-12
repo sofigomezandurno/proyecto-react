@@ -6,12 +6,12 @@ import {Link} from "react-router-dom";
 
 function Item({detalle}) { 
 
-    console.log(detalle)
     return (
     <div className='section'>
             <div>
                 <div className='productos-item'>
                     <h2>{detalle.nombre} </h2>
+                    <h4>Categoria: {detalle.categoria}</h4>
                 <img className="section-img"src={detalle.imagen}/>
                     <div>
                     <h4>

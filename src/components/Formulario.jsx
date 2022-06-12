@@ -2,8 +2,6 @@ import React from 'react'
 import "./style.css";
 import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalStateContext';
-import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import { Cart } from './Cart';
 import { collection, addDoc } from 'firebase/firestore';
@@ -13,6 +11,7 @@ import db from '../service/firebase';
 export const Formulario = () => {
 
     const { carrito, precioTotal } = useContext(GlobalContext);
+    
     const [formulario, setFormulario] = useState({
         buyer:{
             email: "",
@@ -23,8 +22,6 @@ export const Formulario = () => {
         items:carrito,
         precioTotal:precioTotal,
     })
-
-    console.log(carrito)
 
     const {buyer: {email, nombre, apellido, telefono}} = formulario;
 
@@ -91,7 +88,10 @@ export const Formulario = () => {
                 required
                 placeholder='telefono'
                 />
+                {
+                    carrito.length > 0 &&
                 <button onClick={handleSubmit}>Finalizar compra</button>
+                }
             </div>
  
         </div>

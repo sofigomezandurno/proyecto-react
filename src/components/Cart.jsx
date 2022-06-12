@@ -1,19 +1,18 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
 import "./style.css";
 import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalStateContext';
-import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { Link,useLocation } from 'react-router-dom';
 
 
 export const Cart = () => {
     const { carrito, removeFromCart, clear, precioTotal } = useContext(GlobalContext);
-
     const [precioTotalCarrito, setPrecioTotal] = useState(precioTotal())
     useEffect(() => {
         setPrecioTotal(precioTotal());
     }, [carrito])
+
+    const {pathname} = useLocation();
 
     return (
         <div className='sectionCarrito'>
@@ -21,7 +20,10 @@ export const Cart = () => {
                 <button>Volver a productos</button>
             </Link>
             <br />
-            {carrito.length > 0 && <button onClick={() => clear()}>Limpiar carrito</button>}
+            {
+                pathname === '/Cart' && 
+            carrito.length > 0 && <button onClick={() => clear()}>Limpiar carrito</button>
+            }
             <ul>
                 {carrito.length > 0 ? carrito.map((carrito, index) => (
                     <li index={index}>
@@ -41,9 +43,12 @@ export const Cart = () => {
             {carrito.length > 0 && 
             <div>
             <div>Total {precioTotalCarrito}</div>
-            <Link to={`/Formulario`}>
-                <button>Finalizar compra</button>
-            </Link>    
+            {
+                pathname === '/Cart' && 
+                <Link to={`/Formulario`}>
+                    <button>Ir a pagar</button>
+                </Link>    
+            }
             </div>}
         </div>
     )
