@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const Formulario = () => {
 
-    const { carrito, precioTotal } = useContext(GlobalContext);
+    const { carrito, clear,precioTotal } = useContext(GlobalContext);
     const navigate = useNavigate();
 
     const [formulario, setFormulario] = useState({
@@ -31,6 +31,7 @@ export const Formulario = () => {
             const order=  await addDoc(ordersCollections, formulario);
             if(order.id){
                 alert(`Felicitaciones tu compra fue realizada con éxito, tu numero de orden es: ${order.id} , ahora te redirigiremos al home para que sigas viendo mas productos y servicios, muchas gracias!`);
+                clear();
                 navigate('/')
             }
         } catch(error){
