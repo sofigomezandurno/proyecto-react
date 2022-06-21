@@ -47,7 +47,10 @@ export const Formulario = () => {
             email: validate('email',email),
             telefono: validate('telefono',telefono)
         })
-        if(error.nombre || error.apellido || error.email || error.telefono){
+        if(validate('nombre',nombre) || 
+           validate('apellido',apellido) || 
+           validate('email',email) || 
+           validate('telefono',telefono)){
             alert('Ingrese los valores corectos en el formulario');
             return;
         }

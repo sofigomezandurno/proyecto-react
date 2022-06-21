@@ -40,6 +40,16 @@ const GlobalStateContext = ({ children }) => {
         return precioTotal; 
     }
 
+    const cantidadTotal = () => {
+        let cantidadTotal = 0;
+        if (carrito.length > 0){
+            for(let i = 0; i < carrito.length; i++ ){
+                cantidadTotal=cantidadTotal+carrito[i].contador; 
+            }
+        }
+        return cantidadTotal; 
+    }
+
     const removeFromCart = (productId) => {
         console.log("Eliminando producto con id id: " + productId);
         const carritoEditado = [...carrito];
@@ -62,7 +72,7 @@ const GlobalStateContext = ({ children }) => {
     };
 
     return (
-        <GlobalContext.Provider value={{ carrito, addToCart, removeFromCart, isInCart, clear, precioTotal }}>
+        <GlobalContext.Provider value={{ carrito, addToCart, removeFromCart, isInCart, clear, precioTotal, cantidadTotal }}>
             {children}
         </GlobalContext.Provider>
     )

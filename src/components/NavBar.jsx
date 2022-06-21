@@ -6,8 +6,7 @@ import { useContext } from "react";
 import { GlobalContext } from '../context/GlobalStateContext';
 
 const NavBar = () => {
-    const {carrito}=useContext(GlobalContext);
-
+    const {carrito, cantidadTotal}=useContext(GlobalContext);
     return (
         <Navbar>
             <Container fluid>
@@ -36,7 +35,7 @@ const NavBar = () => {
                         </NavDropdown>
                         {carrito.length > 0 && 
                         <Link to={'/Cart'}> 
-                        <Nav.Link href="#action6"> <CarWidget/> </Nav.Link>
+                        <Nav> <CarWidget/> {cantidadTotal()} </Nav>
                         </Link>
                         }
                     </Nav>

@@ -22,14 +22,18 @@ export const ItemCount = ({ stock, initial, producto }) => {
 
     const handleOnAdd = () => {
         setStockAux(stockAux - contador);
-        setContador(0);
+        console.log(state)
         addToCart(state)
-
+        setContador(0);
     }
 
     useEffect(() => {
         setState({ id, nombre, contador, precio })
     }, [contador])
+
+    useEffect(() => {
+        setState({ id, nombre, contador, precio })
+    }, [id, nombre, precio])
 
     useEffect(() => {
         setEstaEnCarrito(isInCart(producto.id))

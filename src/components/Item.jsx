@@ -1,5 +1,4 @@
 import React  from 'react'
-import ItemCount from './ItemCount';
 import "./style.css";
 import {Link} from "react-router-dom";
 
@@ -15,9 +14,7 @@ function Item({detalle}) {
                 <img className="section-img"src={detalle.imagen}/>
                     <div>
                     <h4>
-                        {detalle.precio}
-                        <ItemCount initial={1} stock={detalle.stock} producto={detalle}/>
-
+                        Precio: {detalle.precio}
                     </h4>
                     <Link to={`/item/${detalle.id}`}>
                     <button>Ver más</button>
