@@ -11,7 +11,7 @@ function Item({detalle}) {
                 <div className='productos-item'>
                     <h2>{detalle.nombre} </h2>
                     <h4>Categoria: {detalle.categoria}</h4>
-                <img className="section-img"src={detalle.imagen}/>
+                <img className="section-img" src={detalle.imagen} alt="imagen"/>
                     <div>
                     <h4>
                         Precio: {detalle.precio}

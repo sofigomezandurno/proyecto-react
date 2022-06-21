@@ -32,16 +32,19 @@ function Categoria() {
 
     useEffect(() => {
         buscarProducto();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])  
 
     useEffect(() => {
         buscarProducto();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])    
 
 
     useEffect(() => {
         buscarCategoriaIndex();
         setLoader(false)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [producto])  
 
     const buscarCategoriaIndex = () =>{

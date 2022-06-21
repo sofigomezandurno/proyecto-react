@@ -8,7 +8,7 @@ export const ItemDetail = ({producto}) => {
             <div className='producto'>
             <div className='productos-item'>
                 <h2>{producto.nombre} </h2>
-                <img className="section-img" src={producto.imagen}/>
+                <img className="section-img" src={producto.imagen} alt="detalle"/>
             </div>
 
                 <div className='producto-detalle'>

@@ -10,6 +10,7 @@ export const Cart = () => {
     const [precioTotalCarrito, setPrecioTotal] = useState(precioTotal())
     useEffect(() => {
         setPrecioTotal(precioTotal());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [carrito])
 
     const {pathname} = useLocation();

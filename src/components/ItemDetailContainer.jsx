@@ -13,7 +13,7 @@ function ItemDetailContainer() {
         try {
             const data =  await getDocs(col);
             const result = data.docs.map(doc => doc ={id:doc.id, ...doc.data()})
-            setProducto(result.find((data)=> data.id==id))
+            setProducto(result.find((data)=> data.id===id))
 
         } catch (error) {
             console.log(error)
@@ -23,6 +23,7 @@ function ItemDetailContainer() {
 
     useEffect(() => {
         buscarProducto();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])    
 
     return (

@@ -29,14 +29,17 @@ export const ItemCount = ({ stock, initial, producto }) => {
 
     useEffect(() => {
         setState({ id, nombre, contador, precio })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [contador])
 
     useEffect(() => {
         setState({ id, nombre, contador, precio })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id, nombre, precio])
 
     useEffect(() => {
         setEstaEnCarrito(isInCart(producto.id))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [addToCart])
 
 
