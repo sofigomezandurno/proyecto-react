@@ -21,6 +21,10 @@ export const ItemCount = ({ stock, initial, producto }) => {
     }, [stock])
 
     const handleOnAdd = () => {
+        if(contador < 1){
+            alert('Para agregar productos al carrito, el contador debe ser mayor o igual a 1');
+            return;
+        }
         setStockAux(stockAux - contador);
         console.log(state)
         addToCart(state)
